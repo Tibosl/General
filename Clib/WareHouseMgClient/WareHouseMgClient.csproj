@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DlgCreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DlgCreateUser.Designer.cs">
+      <DependentUpon>DlgCreateUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="IUser.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     <Compile Include="Utils\DataTableHelp.cs" />
     <Compile Include="Utils\DBConnect.cs" />
     <Compile Include="Utils\XmlHelp.cs" />
+    <EmbeddedResource Include="DlgCreateUser.resx">
+      <DependentUpon>DlgCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

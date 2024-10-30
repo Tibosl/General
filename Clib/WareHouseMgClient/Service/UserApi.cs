@@ -1,4 +1,5 @@
 ﻿using AntdUI;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace WareHouseMgClient.Service
             };
             DataTable result = DBConnect.ExecuteQuery(sql, parameters);
             return result;
+        }
+        public bool insertUserInfo(string[] columns, object[] values)
+        {
+            DBConnect.InsertData("w_user", columns,values);
+            return true;
         }
     }
 }

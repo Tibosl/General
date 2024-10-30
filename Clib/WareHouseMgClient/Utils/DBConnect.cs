@@ -56,6 +56,24 @@ namespace WareHouseMgClient.Utils
             }
             return dataTable;
         }
+        public static bool InsertData(string tableName, string[] columns, object[] values)
+        {
+            try
+            {
+                string sql = $"INSERT INTO {tableName} ({string.Join(", ", columns)}) VALUES ({string.Join(", ", values)})";
+                using (MySqlCommand command = new MySqlCommand(sql, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Clib.Logg.Instance.Error(ex.Message);
+                return false;
+            }
+            
+        }
         public static void ConnectClose()
         {
             conn?.Close();

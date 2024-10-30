@@ -132,6 +132,7 @@
             this.lb_account.TabIndex = 7;
             this.lb_account.TabStop = true;
             this.lb_account.Text = "没有账号?";
+            this.lb_account.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lb_account_LinkClicked);
             // 
             // LoginForm
             // 

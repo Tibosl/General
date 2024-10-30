@@ -11,7 +11,7 @@ using WareHouseMgClient.Model;
 
 namespace WareHouseMgClient
 {
-    public partial class MainForm : Form
+    public partial class MainForm : AntdUI.BaseForm
     {
         protected UserDto _user;
         public MainForm(UserDto userDto)

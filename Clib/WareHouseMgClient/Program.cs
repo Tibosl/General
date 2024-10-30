@@ -29,7 +29,7 @@ namespace WareHouseMgClient
                 var dic = XmlHelp.ReadXml(dllPath);
                 if (dic["IsAutoLogin"] != "True")
                 {
-                    if (loginForm.DialogResult == DialogResult.OK)
+                    if (loginForm.ShowDialog() == DialogResult.OK)
                     {
                         var user = loginForm.getUser();
                         loginForm.Dispose();

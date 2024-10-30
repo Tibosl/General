@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <UserInfo>
-  <User UserName="admin" PassWord="admin" IsRemberPW="True" IsAutoLogin="True" />
+  <User UserName="admin" PassWord="admin" IsRemberPW="True" IsAutoLogin="False" />
 </UserInfo>

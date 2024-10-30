@@ -20,7 +20,7 @@ using WareHouseMgClient.Utils;
 
 namespace WareHouseMgClient
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : AntdUI.BaseForm
     {
         UserApi _uapi = new UserApi();
         private UserDto userDto;
@@ -94,6 +94,16 @@ namespace WareHouseMgClient
         private void CreateXml(string dllPath)
         {
             XmlHelp.CreateXml(dllPath);
+        }
+
+        private void lb_account_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DlgCreateUser dlgCreateUser = new DlgCreateUser();
+            if (dlgCreateUser.ShowDialog() == DialogResult.OK) 
+            {
+                CustomBox.Show("注册账户成功","提示");
+                dlgCreateUser.Close();
+            }
         }
     }
 }

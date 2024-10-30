@@ -6,3 +6,5 @@
 /Clib/Clib/.vs
 /Clib/Clib/obj/Debug
 /Clib/Clib/bin/Debug
+/Clib/GnClient/obj/Debug/net8.0-windows
+/Clib/GnClient/obj

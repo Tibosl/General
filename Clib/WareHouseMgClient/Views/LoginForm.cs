@@ -50,17 +50,18 @@ namespace WareHouseMgClient
             var password = this.Input_pwd.Text.Trim().ToString();
             if (string.IsNullOrEmpty(account) || string.IsNullOrEmpty(password)) 
             {
-                
                 CustomBox.Show("请输入账号或密码", "提示");
+                return;
             }
             var rest = _uapi.getUserInfo(account, password);
             if (rest.Rows.Count == 0)
             {
+                CustomBox.Show("账号或密码错误", "提示");
                 return;
             }
             BtnLogin.Spin(() => 
             {
-                var userList = DataTableHelp.ConvertDataTableToList<UserDto>(rest);
+                var userList = DataTableHelp.DataTableToList<UserDto>(rest);
                 if (userList.Count == 0)
                 {
                     CustomBox.Show("系统中找不到该用户", "提示");
@@ -96,6 +97,14 @@ namespace WareHouseMgClient
         private void CreateXml(string dllPath)
         {
             XmlHelp.CreateXml(dllPath);
+        }
+
+        private void cbx_auto_CheckedChanged(object sender, BoolEventArgs e)
+        {
+            if (cbx_auto.Checked)
+            {
+                this.cbx_pwd.Checked = true;
+            }
         }
     }
 }

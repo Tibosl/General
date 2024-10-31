@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 51);
+            this.label1.Location = new System.Drawing.Point(41, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 23);
             this.label1.TabIndex = 0;
@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 97);
+            this.label2.Location = new System.Drawing.Point(41, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 23);
             this.label2.TabIndex = 2;
@@ -95,17 +95,18 @@
             this.cbx_auto.Size = new System.Drawing.Size(75, 23);
             this.cbx_auto.TabIndex = 6;
             this.cbx_auto.Text = "自动登录";
+            this.cbx_auto.CheckedChanged += new AntdUI.BoolEventHandler(this.cbx_auto_CheckedChanged);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Input_pwd);
+            this.panel1.Controls.Add(this.Input_name);
             this.panel1.Controls.Add(this.titlebar);
             this.panel1.Controls.Add(this.BtnLogin);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbx_auto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbx_pwd);
-            this.panel1.Controls.Add(this.Input_name);
-            this.panel1.Controls.Add(this.Input_pwd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -147,7 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 205);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

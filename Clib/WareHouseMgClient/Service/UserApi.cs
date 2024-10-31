@@ -14,14 +14,23 @@ namespace WareHouseMgClient.Service
 {
     public class UserApi : IUser
     {
-        public DataTable getUserInfo(string username, string password)
+        public DataTable getUserInfo(string username = "", string password = "")
         {
-            var sql = $"select * from w_user where username ='{username}' and password = '{password}'";
-            Dictionary<string, object> parameters = new Dictionary<string, object>
+            string sql = string.Empty;
+            Dictionary<string, object> parameters = null;
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
-                { "id", username},
-                { "password", password},
-            };
+                sql = $"select * from w_user where username ='{username}' and password = '{password}'";
+                parameters = new Dictionary<string, object>
+                {
+                    { "id", username},
+                    { "password", password},
+                };
+            }
+            else 
+            {
+                sql = "select * from w_user";
+            }
             DataTable result = DBConnect.ExecuteQuery(sql, parameters);
             return result;
         }
@@ -29,6 +38,17 @@ namespace WareHouseMgClient.Service
         {
             DBConnect.ExecuteInsert(tabName, columns,values);
             return true;
+        }
+
+        public bool modifyPwd(UserDto user)
+        {
+            string query = $"UPDATE w_user SET password = '{user.PassWord}' WHERE username = '{user.UserName}' && u_id = '{user.UId}'";
+            return DBConnect.Excute(query);
+        }
+        public bool deleteUser(UserDto user) 
+        {
+            string query = $"DELETE FROM w_user WHERE u_id = '{user.UId}'";
+            return DBConnect.Excute(query);
         }
     }
 }

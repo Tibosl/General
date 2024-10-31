@@ -38,23 +38,23 @@
             AntdUI.MenuItem menuItem8 = new AntdUI.MenuItem();
             AntdUI.MenuItem menuItem9 = new AntdUI.MenuItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.titlebar = new AntdUI.WindowBar();
+            this.main_bar = new AntdUI.WindowBar();
             this.menus = new AntdUI.Menu();
-            this.flowpanel = new AntdUI.FlowPanel();
+            this.panel = new AntdUI.Panel();
             this.SuspendLayout();
             // 
-            // titlebar
+            // main_bar
             // 
-            this.titlebar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titlebar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.titlebar.IsMax = false;
-            this.titlebar.Location = new System.Drawing.Point(0, 0);
-            this.titlebar.MaximizeBox = false;
-            this.titlebar.Name = "titlebar";
-            this.titlebar.Size = new System.Drawing.Size(882, 20);
-            this.titlebar.SubText = "";
-            this.titlebar.TabIndex = 15;
-            this.titlebar.Text = "仓库管理系统";
+            this.main_bar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.main_bar.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.main_bar.IsMax = false;
+            this.main_bar.Location = new System.Drawing.Point(0, 0);
+            this.main_bar.MaximizeBox = false;
+            this.main_bar.Name = "main_bar";
+            this.main_bar.Size = new System.Drawing.Size(882, 34);
+            this.main_bar.SubText = "";
+            this.main_bar.TabIndex = 15;
+            this.main_bar.Text = "仓库管理系统";
             // 
             // menus
             // 
@@ -99,7 +99,7 @@
             this.menus.Items.Add(menuItem7);
             this.menus.Items.Add(menuItem8);
             this.menus.Items.Add(menuItem9);
-            this.menus.Location = new System.Drawing.Point(0, 20);
+            this.menus.Location = new System.Drawing.Point(0, 34);
             this.menus.Mode = AntdUI.TMenuMode.Horizontal;
             this.menus.Name = "menus";
             this.menus.Size = new System.Drawing.Size(882, 46);
@@ -107,23 +107,24 @@
             this.menus.Text = "menu1";
             this.menus.SelectChanged += new AntdUI.SelectEventHandler(this.menus_SelectChanged);
             // 
-            // flowpanel
+            // panel
             // 
-            this.flowpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowpanel.Location = new System.Drawing.Point(0, 66);
-            this.flowpanel.Name = "flowpanel";
-            this.flowpanel.Size = new System.Drawing.Size(882, 420);
-            this.flowpanel.TabIndex = 17;
-            this.flowpanel.Text = "flowPanel1";
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 80);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(882, 406);
+            this.panel.TabIndex = 17;
+            this.panel.Text = "panel1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 486);
-            this.Controls.Add(this.flowpanel);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.menus);
-            this.Controls.Add(this.titlebar);
+            this.Controls.Add(this.main_bar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -135,8 +136,8 @@
 
         #endregion
 
-        private AntdUI.WindowBar titlebar;
+        private AntdUI.WindowBar main_bar;
         private AntdUI.Menu menus;
-        private AntdUI.FlowPanel flowpanel;
+        private AntdUI.Panel panel;
     }
 }

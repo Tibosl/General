@@ -32,8 +32,10 @@ namespace WareHouseMgClient
                     if (loginForm.ShowDialog() == DialogResult.OK)
                     {
                         var user = loginForm.getUser();
-                        loginForm.Dispose();
+                        loginForm.Close();
                         Application.Run(new MainForm(user));
+                        //退出或者修改密码
+                        ShowForm();
                     }
                     else
                     {
@@ -43,11 +45,27 @@ namespace WareHouseMgClient
                 else 
                 {
                     var rest = new UserApi().getUserInfo(dic["UserName"], dic["PassWord"]);
-                    var userList = DataTableHelp.ConvertDataTableToList<UserDto>(rest);
+                    var userList = DataTableHelp.DataTableToList<UserDto>(rest);
                     Application.Run(new MainForm(userList?.FirstOrDefault()));
                 }
             }
             DBConnect.ConnectClose();
+        }
+        private static void ShowForm() 
+        {
+            if (ConfigParam.getConfigParam())
+            {
+                LoginForm lgform = new LoginForm();
+                if (lgform.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new MainForm(lgform.getUser()));
+                    ShowForm();
+                }
+                else
+                {
+                    lgform.Dispose();
+                }
+            }
         }
     }
 }

@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 233);
+            this.panel1.Size = new System.Drawing.Size(336, 233);
             this.panel1.TabIndex = 8;
             this.panel1.Text = "panel1";
             // 
@@ -74,7 +74,7 @@
             this.titlebar.MaximizeBox = false;
             this.titlebar.MinimizeBox = false;
             this.titlebar.Name = "titlebar";
-            this.titlebar.Size = new System.Drawing.Size(352, 26);
+            this.titlebar.Size = new System.Drawing.Size(336, 26);
             this.titlebar.SubText = "";
             this.titlebar.TabIndex = 14;
             this.titlebar.Text = "创建用户";
@@ -82,7 +82,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(23, 138);
+            this.label3.Location = new System.Drawing.Point(32, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 23);
             this.label3.TabIndex = 9;
@@ -92,7 +92,7 @@
             // 
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.label6.Location = new System.Drawing.Point(15, 142);
+            this.label6.Location = new System.Drawing.Point(24, 142);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(11, 13);
             this.label6.TabIndex = 13;
@@ -101,7 +101,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 95);
+            this.label2.Location = new System.Drawing.Point(39, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 23);
             this.label2.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.label5.Location = new System.Drawing.Point(22, 100);
+            this.label5.Location = new System.Drawing.Point(31, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 12;
@@ -120,7 +120,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 49);
+            this.label1.Location = new System.Drawing.Point(39, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 23);
             this.label1.TabIndex = 0;
@@ -130,7 +130,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.label4.Location = new System.Drawing.Point(22, 53);
+            this.label4.Location = new System.Drawing.Point(31, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 11;
@@ -143,7 +143,7 @@
             this.Input_repeatName.PasswordChar = '*';
             this.Input_repeatName.PlaceholderText = "请再次输入密码";
             this.Input_repeatName.Size = new System.Drawing.Size(225, 37);
-            this.Input_repeatName.TabIndex = 10;
+            this.Input_repeatName.TabIndex = 5;
             // 
             // BtnInsert
             // 
@@ -179,9 +179,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 233);
+            this.ClientSize = new System.Drawing.Size(336, 233);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

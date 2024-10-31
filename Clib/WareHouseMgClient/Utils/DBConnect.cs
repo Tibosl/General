@@ -74,6 +74,13 @@ namespace WareHouseMgClient.Utils
             }
             
         }
+        public static bool Excute(string sql)
+        {
+            using (MySqlCommand command = new MySqlCommand(sql, conn))
+            {
+                return command.ExecuteNonQuery() > 0 ? true :false ;
+            }
+        }
         public static void ConnectClose()
         {
             conn?.Close();

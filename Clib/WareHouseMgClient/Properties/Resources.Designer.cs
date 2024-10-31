@@ -123,9 +123,29 @@ namespace WareHouseMgClient.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 刷新 {
+            get {
+                object obj = ResourceManager.GetObject("刷新", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 帮助 {
             get {
                 object obj = ResourceManager.GetObject("帮助", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 显示密码 {
+            get {
+                object obj = ResourceManager.GetObject("显示密码", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +216,16 @@ namespace WareHouseMgClient.Properties {
         internal static System.Drawing.Bitmap 退出1 {
             get {
                 object obj = ResourceManager.GetObject("退出1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 隐藏密码 {
+            get {
+                object obj = ResourceManager.GetObject("隐藏密码", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

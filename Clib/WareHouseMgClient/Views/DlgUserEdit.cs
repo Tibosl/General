@@ -43,7 +43,7 @@ namespace WareHouseMgClient.Views
             user.Age = (int)input_age.Value;
             user.Info = input_info.Text;
             user.Sex = selectSex.Text == "女" ? 0 : 1;
-            if (api.updateUser(user)) 
+            if (api.UpdateUser(user)) 
             {
                 submit = true;
             }

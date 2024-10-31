@@ -58,7 +58,7 @@ namespace WareHouseMgClient.Views
                     case "删除":
                         if (Modal.open(_form, "是否删除此数据？", "提示",TType.Info) == DialogResult.OK)
                         {
-                            api.deleteUser(user);
+                            api.DeleteUser(user);
                             antList.Remove(user);
                             AntdUI.Message.success(_form, "删除数据成功", autoClose: 2);
                         }

@@ -60,7 +60,7 @@ namespace WareHouseMgClient
                     1,
                     0
                 };
-                if (_api.insertUserInfo("w_user", columns, values))
+                if (_api.InsertUserInfo("w_user", columns, values))
                 {
                     DialogResult = DialogResult.OK;
                     return;

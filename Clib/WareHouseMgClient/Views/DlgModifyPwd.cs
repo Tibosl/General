@@ -50,7 +50,7 @@ namespace WareHouseMgClient.Views
                 return;
             }
             _user.PassWord = newPwd;
-            if (_api.modifyPwd(_user)) DialogResult = DialogResult.OK;
+            if (_api.ModifyPwd(_user)) DialogResult = DialogResult.OK;
         }
 
         private void BtnShowpw1_Click(object sender, EventArgs e)

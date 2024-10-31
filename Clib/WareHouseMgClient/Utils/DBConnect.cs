@@ -56,7 +56,7 @@ namespace WareHouseMgClient.Utils
             }
             return dataTable;
         }
-        public static bool InsertData(string tableName, string[] columns, object[] values)
+        public static bool ExecuteInsert(string tableName, string[] columns, object[] values)
         {
             try
             {

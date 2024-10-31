@@ -10,6 +10,6 @@ namespace WareHouseMgClient
     public interface IUser
     {
         DataTable getUserInfo(string useraneme, string password);
-        bool insertUserInfo(string[] columns, object[] values);
+        bool insertUserInfo(string tabName,string[] columns, object[] values);
     }
 }

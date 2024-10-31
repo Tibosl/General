@@ -20,7 +20,7 @@ using WareHouseMgClient.Utils;
 
 namespace WareHouseMgClient
 {
-    public partial class LoginForm : AntdUI.BaseForm
+    public partial class LoginForm : AntdUI.Window
     {
         UserApi _uapi = new UserApi();
         private UserDto userDto;
@@ -63,7 +63,7 @@ namespace WareHouseMgClient
                 var userList = DataTableHelp.ConvertDataTableToList<UserDto>(rest);
                 if (userList.Count == 0)
                 {
-                    CustomBox.Show("系统找不到该用户", "提示");
+                    CustomBox.Show("系统中找不到该用户", "提示");
                     return;
                 }
                 userDto = userList?.FirstOrDefault();
@@ -79,6 +79,8 @@ namespace WareHouseMgClient
                 }
                 Thread.Sleep(1000);
                 DialogResult = DialogResult.OK;
+            }, () => 
+            {
             });
         }
 
@@ -94,16 +96,6 @@ namespace WareHouseMgClient
         private void CreateXml(string dllPath)
         {
             XmlHelp.CreateXml(dllPath);
-        }
-
-        private void lb_account_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DlgCreateUser dlgCreateUser = new DlgCreateUser();
-            if (dlgCreateUser.ShowDialog() == DialogResult.OK) 
-            {
-                CustomBox.Show("注册账户成功","提示");
-                dlgCreateUser.Close();
-            }
         }
     }
 }

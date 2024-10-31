@@ -14,20 +14,20 @@ namespace WareHouseMgClient.Service
 {
     public class UserApi : IUser
     {
-        public DataTable getUserInfo(string useraneme, string password)
+        public DataTable getUserInfo(string username, string password)
         {
-            var sql = $"select * from w_user where username ='{useraneme}' and password = '{password}'";
+            var sql = $"select * from w_user where username ='{username}' and password = '{password}'";
             Dictionary<string, object> parameters = new Dictionary<string, object>
             {
-                { "id", useraneme},
+                { "id", username},
                 { "password", password},
             };
             DataTable result = DBConnect.ExecuteQuery(sql, parameters);
             return result;
         }
-        public bool insertUserInfo(string[] columns, object[] values)
+        public bool insertUserInfo(string tabName,string[] columns, object[] values)
         {
-            DBConnect.InsertData("w_user", columns,values);
+            DBConnect.ExecuteInsert(tabName, columns,values);
             return true;
         }
     }

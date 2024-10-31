@@ -93,6 +93,12 @@
     <Compile Include="Views\DlgModifyPwd.Designer.cs">
       <DependentUpon>DlgModifyPwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\DlgUserEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DlgUserEdit.Designer.cs">
+      <DependentUpon>DlgUserEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DlgModifyPwd.resx">
       <DependentUpon>DlgModifyPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DlgUserEdit.resx">
+      <DependentUpon>DlgUserEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

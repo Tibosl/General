@@ -47,7 +47,7 @@ namespace WareHouseMgClient
                     this.Input_repeatName.Text = string.Empty;
                     return;
                 }
-                string[] columns = { "u_id", "username", "password", "age", "info", "createtime", "modifytime", "sex" };
+                string[] columns = { "u_id", "username", "password", "age", "info", "createtime", "modifytime", "sex","enable" };
                 object[] values =
                     {
                     $"'{Guid.NewGuid().ToString("N")}'",
@@ -57,7 +57,8 @@ namespace WareHouseMgClient
                     $"'超级管理员'",
                     $"'{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}'",
                      $"'{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}'",
-                    1
+                    1,
+                    0
                 };
                 if (_api.insertUserInfo("w_user", columns, values))
                 {

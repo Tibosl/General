@@ -20,7 +20,7 @@ namespace WareHouseMgClient.Service
             Dictionary<string, object> parameters = null;
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
-                sql = $"select * from w_user where username ='{username}' and password = '{password}'";
+                sql = $"select * from w_user where username ='{username}' and password = '{password}' and enable = '0'";
                 parameters = new Dictionary<string, object>
                 {
                     { "id", username},
@@ -42,7 +42,12 @@ namespace WareHouseMgClient.Service
 
         public bool modifyPwd(UserDto user)
         {
-            string query = $"UPDATE w_user SET password = '{user.PassWord}' WHERE username = '{user.UserName}' && u_id = '{user.UId}'";
+            string query = $"UPDATE w_user SET password = '{user.PassWord}' WHERE username = '{user.UserName}' && u_id = '{user.UId}' && and enable = '0'";
+            return DBConnect.Excute(query);
+        }
+        public bool updateUser(UserDto user)
+        {
+            string query = $"UPDATE w_user SET username = '{user.UserName}',password = '{user.PassWord}',age = '{user.Age}',info = '{user.Info}',sex = '{user.Sex}' WHERE u_id = '{user.UId}' and enable = '0'";
             return DBConnect.Excute(query);
         }
         public bool deleteUser(UserDto user) 

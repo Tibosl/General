@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using WareHouseMgClient.Model;
 using WareHouseMgClient.Utils;
 using WareHouseMgClient.Views;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace WareHouseMgClient
 {
@@ -45,11 +46,11 @@ namespace WareHouseMgClient
                     {
                         CustomBox.Show("注册账户成功", "提示");
                         dlgCreateUser.Close();
+                        this.panel.Controls.Clear();
+                        UserManagerPer newControl = new UserManagerPer(this);
+                        this.panel.Controls.Add(newControl);
+                        newControl.Dock = DockStyle.Fill;
                     }
-                    this.panel.Controls.Clear();
-                    UserManagerPer newControl = new UserManagerPer(this);
-                    this.panel.Controls.Add(newControl);
-                    newControl.Dock = DockStyle.Fill;
                     break;
                 case EnumMenu.Menus.ModifyPassword:
                     DlgModifyPwd dlgModifyPwd = new DlgModifyPwd(_user);
@@ -68,7 +69,7 @@ namespace WareHouseMgClient
                     per.Dock = DockStyle.Fill;
                     break;
                 case EnumMenu.Menus.Exit:
-                    if (AntdUI.Modal.open(this, "是否确定退出系统？", "提示", AntdUI.TType.Info) == DialogResult.Yes)
+                    if (MessageBox.Show("是否退出系统?", "提示",MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         ConfigParam.setConfigParam("IsExist", true);
                         this.Close();
@@ -81,6 +82,10 @@ namespace WareHouseMgClient
                     goods.Dock = DockStyle.Fill;
                     break;
                 case EnumMenu.Menus.InStash:
+                    UserManagerInStash inStash = new UserManagerInStash(this);
+                    this.panel.Controls?.Clear();
+                    this.panel.Controls.Add(inStash);
+                    inStash.Dock = DockStyle.Fill;
                     break;
                 default:
                     break;

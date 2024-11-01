@@ -54,7 +54,7 @@ namespace WareHouseMgClient.Views
         private void CheckValue(Input input,string info) 
         {
             //检查输入内容
-            if (String.IsNullOrEmpty(input.Text))
+            if (string.IsNullOrEmpty(input.Text))
             {
                 input_goodCode.Status = AntdUI.TType.Error;
                 AntdUI.Message.warn(window, info, autoClose: 3);

@@ -108,6 +108,12 @@
     <Compile Include="Views\DlgModifyPwd.Designer.cs">
       <DependentUpon>DlgModifyPwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserManagerInStash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserManagerInStash.Designer.cs">
+      <DependentUpon>UserManagerInStash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserUserEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DlgModifyPwd.resx">
       <DependentUpon>DlgModifyPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserManagerInStash.resx">
+      <DependentUpon>UserManagerInStash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserUserEdit.resx">
       <DependentUpon>UserUserEdit.cs</DependentUpon>

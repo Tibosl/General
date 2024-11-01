@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvalClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd92fa9e9b5053d4b8c28c96cb44bc53acc790a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a4ff812425704456609e79e4389598eccb9de24")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvalClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvalClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

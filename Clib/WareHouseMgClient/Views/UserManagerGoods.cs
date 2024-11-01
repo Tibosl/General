@@ -38,12 +38,28 @@ namespace WareHouseMgClient
                 switch (buttontext)
                 {
                     case "编辑":
+                        var form = new UserGoodEdit(_form, good) { Size = new Size(400, 300) };
+                        AntdUI.Drawer.open(new AntdUI.Drawer.Config(_form, form)
+                        {
+                            OnLoad = () =>
+                            {
+
+                            },
+                            OnClose = () =>
+                            {
+                                if (form.submit)
+                                {
+                                    InitData();
+                                    AntdUI.Message.success(_form, "修改数据成功", autoClose: 2);
+                                }
+                            }
+                        });
                         break;
                     case "删除":
                         if (Modal.open(_form, "是否删除此数据？", "提示", TType.Info) == DialogResult.OK)
                         {
                             good.IsDelete = 1;
-                            api.DeleteUser(good);
+                            api.DeleteGood(good);
                             antList.Remove(good);
                             AntdUI.Message.success(_form, "删除数据成功", autoClose: 2);
                         }

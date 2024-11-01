@@ -12,6 +12,7 @@ namespace WareHouseMgClient.Interface
     {
         DataTable getGoods();
         bool IsEnabledGoods(int flag, string id);
-        bool DeleteUser(GoodsDto good);
+        bool DeleteGood(GoodsDto good);
+        bool UpdateGood(GoodsDto good);
     }
 }

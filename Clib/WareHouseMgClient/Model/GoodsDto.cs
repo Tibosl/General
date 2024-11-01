@@ -11,6 +11,7 @@ namespace WareHouseMgClient.Model
     {
         private bool selected = false;
         private string g_id;
+        private string g_marId;
         private string good_Id;
         private string good_name;
         private string good_time;
@@ -37,6 +38,16 @@ namespace WareHouseMgClient.Model
                 if (g_id == value) return;
                 g_id = value;
                 OnPropertyChanged(nameof(GId));
+            }
+        }
+        public string GMarId
+        {
+            get { return g_marId; }
+            set
+            {
+                if (g_marId == value) return;
+                g_marId = value;
+                OnPropertyChanged(nameof(GMarId));
             }
         }
         public string GoodId

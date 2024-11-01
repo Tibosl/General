@@ -39,7 +39,7 @@ namespace WareHouseMgClient.Views
                 switch (buttontext)
                 {
                     case "编辑":
-                        var form = new DlgUserEdit(_form, user) { Size = new Size(400, 300) };
+                        var form = new UserUserEdit(_form, user) { Size = new Size(400, 300) };
                         AntdUI.Drawer.open(new AntdUI.Drawer.Config(_form, form)
                         {
                             OnLoad = () =>

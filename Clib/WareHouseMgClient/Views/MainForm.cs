@@ -23,13 +23,15 @@ namespace WareHouseMgClient
             {"修改密码", EnumMenu.Menus.ModifyPassword},
             {"管理用户", EnumMenu.Menus.ManagerPerson},
             {"退出", EnumMenu.Menus.Exit},
+            {"货物管理", EnumMenu.Menus.ProManager},
+            {"货物入库", EnumMenu.Menus.InStash},
         };
         public MainForm(UserDto userDto)
         {
             InitializeComponent();
             ConfigParam.setConfigParam("IsExist", false);
             _user = userDto;
-            this.main_bar.Text = string.Concat("登录用户：","[", _user.UserName, "]");
+            this.main_bar.Text = string.Concat("登录用户：", "[", _user.UserName, "]");
         }
 
         private void menus_SelectChanged(object sender, AntdUI.MenuSelectEventArgs e)
@@ -51,7 +53,7 @@ namespace WareHouseMgClient
                     break;
                 case EnumMenu.Menus.ModifyPassword:
                     DlgModifyPwd dlgModifyPwd = new DlgModifyPwd(_user);
-                    if (dlgModifyPwd.ShowDialog() == DialogResult.OK) 
+                    if (dlgModifyPwd.ShowDialog() == DialogResult.OK)
                     {
                         CustomBox.Show("修改密码成功，请重新登录", "提示");
                         dlgModifyPwd.Close();
@@ -61,15 +63,24 @@ namespace WareHouseMgClient
                     break;
                 case EnumMenu.Menus.ManagerPerson:
                     UserManagerPer per = new UserManagerPer(this);
+                    this.panel.Controls?.Clear();
                     this.panel.Controls.Add(per);
                     per.Dock = DockStyle.Fill;
                     break;
                 case EnumMenu.Menus.Exit:
-                    if (AntdUI.Modal.open(this, "是否确定退出系统？", "提示", AntdUI.TType.Info) == DialogResult.Yes) 
+                    if (AntdUI.Modal.open(this, "是否确定退出系统？", "提示", AntdUI.TType.Info) == DialogResult.Yes)
                     {
                         ConfigParam.setConfigParam("IsExist", true);
                         this.Close();
                     }
+                    break;
+                case EnumMenu.Menus.ProManager:
+                    UserManagerGoods goods = new UserManagerGoods(this);
+                    this.panel.Controls?.Clear();
+                    this.panel.Controls.Add(goods);
+                    goods.Dock = DockStyle.Fill;
+                    break;
+                case EnumMenu.Menus.InStash:
                     break;
                 default:
                     break;
@@ -83,7 +94,9 @@ namespace WareHouseMgClient
             AddPerson,
             ModifyPassword,
             ManagerPerson,
-            Exit
+            Exit,
+            ProManager,
+            InStash
         }
     }
 }

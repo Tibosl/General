@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clib", "Clib\Clib.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WareHouseMgClient", "WareHouseMgClient\WareHouseMgClient.csproj", "{E79809E4-7801-4190-AEDA-AC64A57FAD1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvalClient", "AvalClient\AvalClient.csproj", "{21645A21-D665-47F0-9569-CD7FF1655744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E79809E4-7801-4190-AEDA-AC64A57FAD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E79809E4-7801-4190-AEDA-AC64A57FAD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E79809E4-7801-4190-AEDA-AC64A57FAD1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21645A21-D665-47F0-9569-CD7FF1655744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21645A21-D665-47F0-9569-CD7FF1655744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21645A21-D665-47F0-9569-CD7FF1655744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21645A21-D665-47F0-9569-CD7FF1655744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

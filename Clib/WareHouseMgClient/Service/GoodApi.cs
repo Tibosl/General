@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using WareHouseMgClient.Interface;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using WareHouseMgClient.Utils;
+using WareHouseMgClient.Model;
 
 namespace WareHouseMgClient.Service
 {
@@ -18,9 +19,20 @@ namespace WareHouseMgClient.Service
         /// <returns></returns>
         public DataTable getGoods()
         {
-            string sql = "select * from w_goods where enabled = '0'";
+            string sql = "select * from w_goods where isdelete = 0";
             DataTable result = DBConnect.ExecuteQuery(sql, null);
             return result;
+        }
+
+        public bool IsEnabledGoods(int flag, string id)
+        {
+            string sql = $"UPDATE w_goods SET enabled = '{flag}' WHERE g_id = '{id}'";
+            return DBConnect.Excute(sql);
+        }
+        public bool DeleteUser(GoodsDto good)
+        {
+            string query = $"UPDATE w_goods SET isdelete = '{good.IsDelete}' WHERE g_id = '{good.GId}'";
+            return DBConnect.Excute(query);
         }
     }
 }

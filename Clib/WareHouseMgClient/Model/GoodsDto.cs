@@ -14,6 +14,7 @@ namespace WareHouseMgClient.Model
         private string good_Id;
         private string good_name;
         private string good_time;
+        private int isdelete;
         private bool enabled = false;
         private CellBadge cellBadge;
         private CellLink[] cellLinks;
@@ -76,6 +77,16 @@ namespace WareHouseMgClient.Model
                 if (enabled == value) return;
                 enabled = value;
                 OnPropertyChanged(nameof(Enabled));
+            }
+        }
+        public int IsDelete
+        {
+            get { return isdelete; }
+            set
+            {
+                if (isdelete == value) return;
+                isdelete = value;
+                OnPropertyChanged(nameof(IsDelete));
             }
         }
         public CellBadge CellBadge

@@ -27,7 +27,7 @@ namespace WareHouseMgClient.Views
             _form = form;
             InitTableColumns();
             InitData();
-            dataTableUsers.CellButtonClick += DataTableUsers_CellButtonClick; ;
+            dataTableUsers.CellButtonClick += DataTableUsers_CellButtonClick;
         }
 
         private void DataTableUsers_CellButtonClick(object sender, TableButtonEventArgs e)
